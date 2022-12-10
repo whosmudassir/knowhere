@@ -1,10 +1,11 @@
 import React from 'react';
 import {NativeBaseProvider, Box} from 'native-base';
+import Welcome from './src/screens/Welcome';
 
 export default function App() {
   return (
     <NativeBaseProvider>
-      <Box>Hello world !!!</Box>
+      <Welcome />
     </NativeBaseProvider>
   );
 }
