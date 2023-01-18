@@ -1,50 +1,56 @@
 import {extendTheme} from 'native-base';
 
 export const theme = extendTheme({
+  colors: {
+    primary: '#5667FD',
+    secondary: '#F4F5F9',
+  },
+
+  components: {
+    Text: {
+      variants: {
+        semiBoldText: {
+          fontWeight: 600,
+          fontSize: 14,
+          color: '#303030',
+          fontFamily: 'body',
+        },
+      },
+    },
+    Button: {
+      variants: {},
+    },
+    Link: {variants: {}},
+  },
+
   fontConfig: {
-    Roboto: {
+    Inter: {
       100: {
-        normal: 'Roboto-Light',
-        italic: 'Roboto-LightItalic',
+        normal: 'Inter-Light',
       },
       200: {
-        normal: 'Roboto-Light',
-        italic: 'Roboto-LightItalic',
+        normal: 'Inter-Thin',
       },
       300: {
-        normal: 'Roboto-Light',
-        italic: 'Roboto-LightItalic',
+        normal: 'Inter-Regular',
       },
       400: {
-        normal: 'Roboto-Regular',
-        italic: 'Roboto-Italic',
+        normal: 'Inter-Medium',
       },
       500: {
-        normal: 'Roboto-Medium',
+        normal: 'Inter-SemiBold',
       },
       600: {
-        normal: 'Roboto-Medium',
-        italic: 'Roboto-MediumItalic',
+        normal: 'Inter-Bold',
       },
-      // Add more variants
-      //   700: {
-      //     normal: 'Roboto-Bold',
-      //   },
-      //   800: {
-      //     normal: 'Roboto-Bold',
-      //     italic: 'Roboto-BoldItalic',
-      //   },
-      //   900: {
-      //     normal: 'Roboto-Bold',
-      //     italic: 'Roboto-BoldItalic',
-      //   },
+      700: {
+        normal: 'Extra-Bold',
+      },
     },
   },
 
   // Make sure values below matches any of the keys in `fontConfig`
   fonts: {
-    heading: 'Roboto',
-    body: 'Roboto',
-    mono: 'Roboto',
+    body: 'Inter',
   },
 });

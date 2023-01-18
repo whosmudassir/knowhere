@@ -1,18 +1,25 @@
 import React from 'react';
-import {Text, Box, Image, Button, Link, ScrollView} from 'native-base';
+import {Text, Box, VStack, Image, Button, Link, ScrollView} from 'native-base';
 
 const Welcome = () => {
   return (
-    <ScrollView>
-      <Box flex={1} bgColor={'#FFFF'} alignItems={'center'}>
-        <Image
-          source={require(`../../assets/images/knowhere.png`)}
-          resizeMode="cover"
-          w={40}
-          size={'2xl'}
-          mb={-20}
-          mt={-10}
-        />
+    <ScrollView
+      flex={1}
+      contentContainerStyle={{
+        flexGrow: 1,
+        backgroundColor: 'white',
+        alignItems: 'center',
+      }}>
+      <VStack>
+        <Box alignItems={'center'} mb={-20} mt={-16}>
+          <Image
+            source={require(`../../assets/images/knowhere.png`)}
+            alt={'img'}
+            resizeMode="cover"
+            w={10}
+            size={'2xl'}
+          />
+        </Box>
         <Box
           bgColor={'#F4F5F9'}
           p={6}
@@ -21,7 +28,9 @@ const Welcome = () => {
           w={'80%'}
           alignItems={'center'}
           borderRadius={10}>
-          <Text>Find place to rent</Text>
+          <Text variant={'semiBoldText'} pb={2}>
+            Find places to rent
+          </Text>
           <Image
             source={require(`../../assets/images/house.png`)}
             resizeMode="cover"
@@ -37,7 +46,9 @@ const Welcome = () => {
           w={'80%'}
           alignItems={'center'}
           borderRadius={10}>
-          <Text>Find street food that locals love</Text>
+          <Text variant={'semiBoldText'} textAlign={'center'} pb={2}>
+            Find street food that locals love
+          </Text>
           <Image
             source={require(`../../assets/images/cup.png`)}
             resizeMode="cover"
@@ -45,9 +56,11 @@ const Welcome = () => {
             w={40}
           />
         </Box>
-        <Button>Sign up</Button>
-        <Link>Skip</Link>
-      </Box>
+        <Button bgColor={'primary'}>Sign up</Button>
+        <Link alignSelf={'center'} mt={2}>
+          <Text>Skip</Text>
+        </Link>
+      </VStack>
     </ScrollView>
   );
 };
