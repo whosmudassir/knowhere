@@ -27,7 +27,7 @@ const Welcome = () => {
           mb={6}
           w={'80%'}
           alignItems={'center'}
-          borderRadius={10}>
+          borderRadius={20}>
           <Text variant={'semiBoldText'} pb={2}>
             Find places to rent
           </Text>
@@ -45,8 +45,12 @@ const Welcome = () => {
           mb={6}
           w={'80%'}
           alignItems={'center'}
-          borderRadius={10}>
-          <Text variant={'semiBoldText'} textAlign={'center'} pb={2}>
+          borderRadius={20}>
+          <Text
+            variant={'semiBoldText'}
+            textAlign={'center'}
+            pb={2}
+            lineHeight={'19px'}>
             Find street food that locals love
           </Text>
           <Image
@@ -56,7 +60,9 @@ const Welcome = () => {
             w={40}
           />
         </Box>
-        <Button bgColor={'primary'}>Sign up</Button>
+        <Button bgColor={'primary'} borderRadius={10} p={3}>
+          Sign up
+        </Button>
         <Link alignSelf={'center'} mt={2}>
           <Text>Skip</Text>
         </Link>
