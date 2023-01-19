@@ -10,7 +10,7 @@ export const theme = extendTheme({
     Text: {
       variants: {
         semiBoldText: {
-          fontWeight: 600,
+          fontWeight: 500,
           fontSize: 14,
           color: '#303030',
           fontFamily: 'body',
