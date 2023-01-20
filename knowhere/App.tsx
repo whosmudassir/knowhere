@@ -11,8 +11,12 @@ export default function App() {
   return (
     <NavigationContainer>
       <NativeBaseProvider theme={theme}>
-        <Stack.Navigator>
-          <Stack.Screen name="Welcome" component={Welcome} />
+        <Stack.Navigator initialRouteName="Welcome">
+          <Stack.Screen
+            name="Welcome"
+            component={Welcome}
+            options={{headerShown: false}}
+          />
           <Stack.Screen name="Login" component={Login} />
         </Stack.Navigator>
       </NativeBaseProvider>
