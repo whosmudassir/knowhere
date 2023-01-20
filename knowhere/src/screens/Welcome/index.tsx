@@ -72,9 +72,12 @@ const Welcome: React.FC<WelcomeProps> = ({navigation}) => {
           onPress={() => navigation.navigate('Login')}>
           Sign up
         </Button>
-        <Link alignSelf={'center'} mt={2}>
+        <Button
+          alignSelf={'center'}
+          mt={2}
+          onPress={() => navigation.navigate('Home')}>
           <Text>Skip</Text>
-        </Link>
+        </Button>
       </VStack>
     </ScrollView>
   );
