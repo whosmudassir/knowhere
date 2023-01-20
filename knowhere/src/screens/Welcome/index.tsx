@@ -1,7 +1,12 @@
 import React from 'react';
 import {Text, Box, VStack, Image, Button, Link, ScrollView} from 'native-base';
+import {NavigationProp, ParamListBase} from '@react-navigation/native';
 
-const Welcome = () => {
+interface WelcomeProps {
+  navigation: NavigationProp<ParamListBase>;
+}
+
+const Welcome: React.FC<WelcomeProps> = ({navigation}) => {
   return (
     <ScrollView
       flex={1}
@@ -60,7 +65,11 @@ const Welcome = () => {
             w={40}
           />
         </Box>
-        <Button bgColor={'primary'} borderRadius={10} p={3}>
+        <Button
+          bgColor={'primary'}
+          borderRadius={10}
+          p={3}
+          onPress={() => navigation.navigate('Login')}>
           Sign up
         </Button>
         <Link alignSelf={'center'} mt={2}>
