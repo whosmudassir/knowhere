@@ -1,7 +1,6 @@
 import React from 'react';
 import {NativeBaseProvider, Box} from 'native-base';
 import Welcome from './src/screens/Welcome';
-import Login from './src/screens/Login';
 import Home from './src/screens/Home';
 import {theme} from './src/theme';
 import {NavigationContainer} from '@react-navigation/native';
@@ -18,7 +17,7 @@ export default function App() {
             component={Welcome}
             options={{headerShown: false}}
           />
-          <Stack.Screen name="Login" component={Login} />
+
           <Stack.Screen
             name="Home"
             component={Home}
