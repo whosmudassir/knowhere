@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text} from 'native-base';
+import {Divider, Link, Text} from 'native-base';
 import {
   Button,
   Actionsheet,
@@ -16,15 +16,18 @@ interface LoginProps {
   onLoginClose: () => void;
 }
 
+const contentWidth = {
+  base: '75%',
+  md: '25%',
+};
+
 const InputFiledSection = () => {
   const [show, setShow] = React.useState(false);
+
   return (
     <Stack space={4} w="100%" alignItems="center">
       <Input
-        w={{
-          base: '75%',
-          md: '25%',
-        }}
+        w={contentWidth}
         InputLeftElement={
           <Icon
             as={<Ionicons name="ios-person" />}
@@ -36,10 +39,19 @@ const InputFiledSection = () => {
         placeholder="Name"
       />
       <Input
-        w={{
-          base: '75%',
-          md: '25%',
-        }}
+        w={contentWidth}
+        InputLeftElement={
+          <Icon
+            as={<Ionicons name="ios-mail" />}
+            size={5}
+            ml="2"
+            color="muted.400"
+          />
+        }
+        placeholder="Email Address"
+      />
+      <Input
+        w={contentWidth}
         type={show ? 'text' : 'password'}
         InputRightElement={
           <Pressable onPress={() => setShow(!show)}>
@@ -53,6 +65,9 @@ const InputFiledSection = () => {
         }
         placeholder="Password"
       />
+      <Button w={contentWidth} variant={'primaryButton'}>
+        Create Account
+      </Button>
     </Stack>
   );
 };
@@ -64,10 +79,33 @@ const Login: React.FC<LoginProps> = ({isLoginOpen, onLoginClose}) => {
         isOpen={isLoginOpen}
         onClose={onLoginClose}
         bgColor={'transparent'}>
-        <Actionsheet.Content>
-          <Text>Create an account</Text>
+        <Actionsheet.Content py={8}>
+          <Text fontSize={22} fontWeight={600} pb={8}>
+            Create an account
+          </Text>
 
           <InputFiledSection />
+
+          <Text pt={4}>
+            Already have an account?
+            <Link>Sign in</Link>
+          </Text>
+
+          <Divider my={10} w={contentWidth} />
+          <Button
+            variant={'primaryButton'}
+            mb={3}
+            leftIcon={<Ionicons name="ios-logo-google" color={'white'} />}>
+            With Google
+          </Button>
+
+          <Button
+            variant={'primaryButton'}
+            leftIcon={
+              <Ionicons name="ios-phone-portrait-outline" color={'white'} />
+            }>
+            With Phone number
+          </Button>
         </Actionsheet.Content>
       </Actionsheet>
     </>

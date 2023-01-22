@@ -18,7 +18,16 @@ export const theme = extendTheme({
       },
     },
     Button: {
-      variants: {},
+      variants: {
+        primaryButton: {
+          bgColor: 'primary',
+          w: {
+            base: '75%',
+            md: '25%',
+          },
+          _text: {color: 'white'},
+        },
+      },
     },
     Link: {variants: {}},
   },
