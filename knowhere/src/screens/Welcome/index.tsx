@@ -71,10 +71,8 @@ const Welcome: React.FC<WelcomeProps> = ({navigation}) => {
             />
           </Box>
           <Button
-            bgColor={'primary'}
-            borderRadius={10}
+            variant={'thickPrimaryBtn'}
             mt={6}
-            p={3}
             onPress={() => setIsLoginOpen(!isLoginOpen)}>
             Sign up
           </Button>

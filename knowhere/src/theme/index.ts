@@ -27,6 +27,17 @@ export const theme = extendTheme({
           },
           _text: {color: 'white'},
         },
+        thickPrimaryBtn: {
+          bgColor: 'primary',
+          borderRadius: 10,
+          padding: 6,
+
+          _text: {
+            color: 'white',
+            p: 1.5,
+            fontSize: 14,
+          },
+        },
       },
     },
     Link: {variants: {}},
