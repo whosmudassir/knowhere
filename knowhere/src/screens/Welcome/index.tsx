@@ -18,9 +18,10 @@ const Welcome: React.FC<WelcomeProps> = ({navigation}) => {
           flexGrow: 1,
           backgroundColor: 'white',
           alignItems: 'center',
+          justifyContent: 'center',
         }}>
         <VStack>
-          <Box alignItems={'center'} mb={-20} mt={-16}>
+          <Box alignItems={'center'} mb={-16} mt={-16}>
             <Image
               source={require(`../../assets/images/knowhere.png`)}
               alt={'img'}
@@ -72,6 +73,7 @@ const Welcome: React.FC<WelcomeProps> = ({navigation}) => {
           <Button
             bgColor={'primary'}
             borderRadius={10}
+            mt={6}
             p={3}
             onPress={() => setIsLoginOpen(!isLoginOpen)}>
             Sign up
