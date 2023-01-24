@@ -1,8 +1,13 @@
 import React from 'react';
 import {Text} from 'native-base';
+import MainHeader from '../../components/common/MainHeader';
 
 const Rent = () => {
-  return <Text>Rent</Text>;
+  return (
+    <>
+      <MainHeader />
+    </>
+  );
 };
 
 export default Rent;
