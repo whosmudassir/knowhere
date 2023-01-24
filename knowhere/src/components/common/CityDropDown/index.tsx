@@ -26,6 +26,11 @@ const CityDropDown = () => {
           borderColor={'transparent'}
           onValueChange={itemValue => setService(itemValue)}>
           <Select.Item label="Kurnool" value="kurnool" />
+          <Select.Item
+            disabled={true}
+            label="Sorry, No other location available 😥 "
+            value="none"
+          />
         </Select>
       </Box>
     </Center>
