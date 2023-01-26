@@ -1,7 +1,7 @@
 export const rentItems = [
   {
     id: 1,
-    img: '',
+    img: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1600',
     area: 'one town',
     rent: 6000,
     type: '1 bhk',
@@ -13,7 +13,7 @@ export const rentItems = [
   },
   {
     id: 2,
-    img: '',
+    img: 'https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=1600',
     area: 'vr colony',
     rent: 10000,
     type: '2 bhk',
@@ -25,7 +25,7 @@ export const rentItems = [
   },
   {
     id: 3,
-    img: '',
+    img: 'https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=1600',
     area: 'nr peta',
     rent: 60000,
     type: '1 room',
@@ -37,7 +37,7 @@ export const rentItems = [
   },
   {
     id: 4,
-    img: '',
+    img: 'https://images.pexels.com/photos/1974596/pexels-photo-1974596.jpeg?auto=compress&cs=tinysrgb&w=1600',
     area: 'prakash nagar',
     rent: 20000,
     type: '3 bhk',
@@ -49,7 +49,7 @@ export const rentItems = [
   },
   {
     id: 5,
-    img: '',
+    img: 'https://images.pexels.com/photos/259751/pexels-photo-259751.jpeg?auto=compress&cs=tinysrgb&w=1600',
     area: 'prakash nagar',
     rent: 20000,
     type: '3 bhk',
@@ -61,7 +61,7 @@ export const rentItems = [
   },
   {
     id: 6,
-    img: '',
+    img: 'https://images.pexels.com/photos/323776/pexels-photo-323776.jpeg?auto=compress&cs=tinysrgb&w=1600',
     area: 'prakash nagar',
     rent: 20000,
     type: '3 bhk',

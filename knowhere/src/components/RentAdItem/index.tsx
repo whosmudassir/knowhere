@@ -1,6 +1,16 @@
 import React, {useEffect, useState} from 'react';
-import {HStack, Text, VStack, View, Image} from 'native-base';
+import {
+  HStack,
+  Text,
+  VStack,
+  View,
+  Icon,
+  Box,
+  Image,
+  Button,
+} from 'native-base';
 import {rentItems} from '../../data/RentItemsMockData';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const RentAdItem = () => {
   const [rentItem, setRentItem] = useState();
@@ -10,7 +20,6 @@ const RentAdItem = () => {
     const fetchData = () => {
       try {
         setLoading(true);
-
         setRentItem(rentItems);
         setLoading(false);
       } catch (error) {
@@ -29,27 +38,57 @@ const RentAdItem = () => {
     <>
       <VStack alignItems={'center'}>
         <Text py={4}>Recently Vacated</Text>
-        {/* <HStack w={'90%'}> */}
         <VStack w={'90%'}>
           {rentItems.map(item => (
-            <HStack key={item.id} mb={4} bg={'white'} borderRadius={10} p={3}>
+            <HStack key={item.id} mb={4} bg={'white'} borderRadius={10}>
               <Image
+                borderTopLeftRadius={10}
+                borderBottomLeftRadius={10}
                 source={{uri: item.img}}
-                style={{width: 100, height: 100}}
+                style={{width: '42%', height: '100%'}}
               />
-              <VStack justifyItems={'flex-end'}>
-                <Text>Area: {item.area}</Text>
+              <VStack justifyItems={'flex-end'} p={3}>
+                <Text fontSize={13}>Area: {item.area}</Text>
                 <Text>Rent: {item.rent}</Text>
                 <Text>Type: {item.type}</Text>
                 <Text>Preferred: {item.preferred}</Text>
-                <Text>Posted On: {item.postedOn}</Text>
-                <Text>Contact Name: {item.contactName}</Text>
-                <Text>Contact Number: {item.contactNumber}</Text>
+                <Text color={'muted.400'} fontSize={12}>
+                  <Icon
+                    as={<Ionicons name="ios-time" />}
+                    size={4}
+                    color={'muted.400'}
+                  />{' '}
+                  Posted on {item.postedOn}
+                </Text>
+                {/* <Text>Contact Name: {item.contactName}</Text> */}
+                <Box flexDirection={'row'}>
+                  <Button
+                    ml={2}
+                    mr={3}
+                    bgColor="white"
+                    borderRadius={100}
+                    borderColor={'primary'}
+                    borderWidth={'1px'}
+                    _text={{
+                      color: 'primary',
+                      fontSize: 12,
+                    }}>
+                    Directions
+                  </Button>
+                  <Button
+                    bgColor="primary"
+                    borderRadius={100}
+                    _text={{
+                      fontSize: 12,
+                    }}>
+                    Contact
+                  </Button>
+                </Box>
+                {/* <Text>Contact Number: {item.contactNumber}</Text> */}
               </VStack>
             </HStack>
           ))}
         </VStack>
-        {/* </HStack> */}
       </VStack>
     </>
   );
