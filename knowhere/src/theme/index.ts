@@ -15,6 +15,19 @@ export const theme = extendTheme({
           color: '#303030',
           fontFamily: 'body',
         },
+        rentItemTextKey: {
+          fontSize: 13,
+          color: '#151515',
+          fontFamily: 'body',
+          fontWeight: 400,
+        },
+        rentItemTextValue: {
+          fontSize: 13,
+          color: '#595959',
+          fontFamily: 'body',
+          fontWeight: 400,
+          textTransform: 'capitalize',
+        },
       },
     },
     Button: {

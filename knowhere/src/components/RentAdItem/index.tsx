@@ -12,6 +12,15 @@ import {
 import {rentItems} from '../../data/RentItemsMockData';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
+const RentListText = ({keyText, valueText}) => {
+  return (
+    <HStack>
+      <Text variant="rentItemTextKey">{keyText} : </Text>
+      <Text variant="rentItemTextValue">{valueText}</Text>
+    </HStack>
+  );
+};
+
 const RentAdItem = () => {
   const [rentItem, setRentItem] = useState();
   const [loading, setLoading] = useState(true);
@@ -48,36 +57,43 @@ const RentAdItem = () => {
                 style={{width: '42%', height: '100%'}}
               />
               <VStack justifyItems={'flex-end'} p={3}>
-                <Text fontSize={13}>Area: {item.area}</Text>
-                <Text>Rent: {item.rent}</Text>
-                <Text>Type: {item.type}</Text>
-                <Text>Preferred: {item.preferred}</Text>
-                <Text color={'muted.400'} fontSize={12}>
-                  <Icon
-                    as={<Ionicons name="ios-time" />}
-                    size={4}
-                    color={'muted.400'}
-                  />{' '}
-                  Posted on {item.postedOn}
-                </Text>
+                <Box ml={3}>
+                  <RentListText keyText={'Area'} valueText={item.area} />
+                  <RentListText keyText={'Rent'} valueText={item.rent} />
+                  <RentListText keyText={'Type'} valueText={item.type} />
+                  <RentListText
+                    keyText={'Preferred'}
+                    valueText={item.preferred}
+                  />
+                  <Text color={'muted.400'} fontSize={12} my={1}>
+                    <Icon
+                      as={<Ionicons name="ios-time" />}
+                      size={4}
+                      color={'muted.400'}
+                    />{' '}
+                    Posted on {item.postedOn}
+                  </Text>
+                </Box>
                 {/* <Text>Contact Name: {item.contactName}</Text> */}
                 <Box flexDirection={'row'}>
                   <Button
                     ml={2}
-                    mr={3}
+                    mr={2.5}
                     bgColor="white"
-                    borderRadius={100}
+                    borderRadius={13}
                     borderColor={'primary'}
                     borderWidth={'1px'}
+                    w={20}
                     _text={{
                       color: 'primary',
                       fontSize: 12,
                     }}>
-                    Directions
+                    Direction
                   </Button>
                   <Button
+                    w={20}
                     bgColor="primary"
-                    borderRadius={100}
+                    borderRadius={13}
                     _text={{
                       fontSize: 12,
                     }}>
