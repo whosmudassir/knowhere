@@ -65,7 +65,7 @@ const RentAdItem = () => {
                     keyText={'Preferred'}
                     valueText={item.preferred}
                   />
-                  <Text color={'muted.400'} fontSize={12} my={1}>
+                  <Text color={'muted.400'} fontSize={11} my={2}>
                     <Icon
                       as={<Ionicons name="ios-time" />}
                       size={4}
@@ -83,6 +83,8 @@ const RentAdItem = () => {
                     borderRadius={13}
                     borderColor={'primary'}
                     borderWidth={'1px'}
+                    h={9}
+                    p={0}
                     w={20}
                     _text={{
                       color: 'primary',
@@ -91,6 +93,8 @@ const RentAdItem = () => {
                     Direction
                   </Button>
                   <Button
+                    h={9}
+                    p={0}
                     w={20}
                     bgColor="primary"
                     borderRadius={13}
