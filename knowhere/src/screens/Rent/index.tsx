@@ -1,7 +1,7 @@
 import React from 'react';
 import {ScrollView, Text, VStack, Modal, Button} from 'native-base';
 import MainHeader from '../../components/common/MainHeader';
-import RentAdItem from '../../components/RentAdItem';
+import RentAdItems from '../../components/RentAdItems';
 
 const Rent = () => {
   return (
@@ -9,7 +9,7 @@ const Rent = () => {
       <MainHeader />
       <ScrollView flex={1} bgColor={'secondary'}>
         <VStack>
-          <RentAdItem />
+          <RentAdItems />
         </VStack>
       </ScrollView>
       <Modal isOpen={false} onClose={() => {}}>
