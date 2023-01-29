@@ -14,7 +14,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const RentListText = ({keyText, valueText}) => {
   return (
-    <HStack>
+    <HStack my={0.25}>
       <Text variant="rentItemTextKey">{keyText} : </Text>
       <Text variant="rentItemTextValue">{valueText}</Text>
     </HStack>
@@ -46,7 +46,7 @@ const RentAdItem = () => {
   return (
     <>
       <VStack alignItems={'center'}>
-        <Text py={4}>Recently Vacated</Text>
+        <Text variant={'categoryTitle'}>Places for rent</Text>
         <VStack w={'90%'}>
           {rentItems.map(item => (
             <HStack key={item.id} mb={4} bg={'white'} borderRadius={10}>
@@ -65,14 +65,16 @@ const RentAdItem = () => {
                     keyText={'Preferred'}
                     valueText={item.preferred}
                   />
-                  <Text color={'muted.400'} fontSize={11} my={2}>
+                  <HStack my={2} alignItems={'center'}>
                     <Icon
                       as={<Ionicons name="ios-time" />}
                       size={4}
                       color={'muted.400'}
-                    />{' '}
-                    Posted on {item.postedOn}
-                  </Text>
+                    />
+                    <Text color={'muted.400'} fontSize={11} ml={1}>
+                      Posted on {item.postedOn}
+                    </Text>
+                  </HStack>
                 </Box>
                 {/* <Text>Contact Name: {item.contactName}</Text> */}
                 <Box flexDirection={'row'}>

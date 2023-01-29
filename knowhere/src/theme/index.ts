@@ -28,6 +28,16 @@ export const theme = extendTheme({
           fontWeight: 400,
           textTransform: 'capitalize',
         },
+
+        categoryTitle: {
+          py: 4,
+          textTransform: 'uppercase',
+          fontWeight: 700,
+          fontFamily: 'heading',
+          color: '#303030',
+          letterSpacing: '1.50px',
+          fontSize: 14.5,
+        },
       },
     },
     Button: {
