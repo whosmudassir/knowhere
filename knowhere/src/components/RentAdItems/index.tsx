@@ -11,19 +11,9 @@ import {
 } from 'native-base';
 import {rentItems} from '../../data/RentItemsMockData';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import AdItemHorizontalText from '../common/AdItemHorizontalText';
 
-const RentListText = ({iconName, valueText}) => {
-  return (
-    <HStack my={0.25} alignItems={'center'}>
-      <Icon as={<Ionicons name={iconName} />} size={4} color={'primary'} />
-      <Text variant="rentItemTextValue" ml={1.5}>
-        {valueText}
-      </Text>
-    </HStack>
-  );
-};
-
-const RentAdItem = () => {
+const RentAdItems = () => {
   const [rentItem, setRentItem] = useState();
   const [loading, setLoading] = useState(true);
 
@@ -60,15 +50,21 @@ const RentAdItem = () => {
               />
               <VStack justifyItems={'flex-end'} p={3}>
                 <Box ml={3}>
-                  <RentListText
+                  <AdItemHorizontalText
                     iconName={'ios-location-sharp'}
-                    valueText={item.area}
+                    textValue={item.area}
                   />
-                  <RentListText iconName={'ios-home'} valueText={item.type} />
-                  <RentListText iconName={'md-cash'} valueText={item.rent} />
-                  <RentListText
+                  <AdItemHorizontalText
+                    iconName={'ios-home'}
+                    textValue={item.type}
+                  />
+                  <AdItemHorizontalText
+                    iconName={'md-cash'}
+                    textValue={item.rent}
+                  />
+                  <AdItemHorizontalText
                     iconName={'ios-man'}
-                    valueText={item.preferred}
+                    textValue={item.preferred}
                   />
                   <HStack mt={1.5} mb={2} alignItems={'center'}>
                     <Icon
@@ -121,4 +117,4 @@ const RentAdItem = () => {
   );
 };
 
-export default RentAdItem;
+export default RentAdItems;
