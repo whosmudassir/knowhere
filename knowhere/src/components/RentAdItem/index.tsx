@@ -12,11 +12,13 @@ import {
 import {rentItems} from '../../data/RentItemsMockData';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-const RentListText = ({keyText, valueText}) => {
+const RentListText = ({iconName, valueText}) => {
   return (
-    <HStack my={0.25}>
-      <Text variant="rentItemTextKey">{keyText} : </Text>
-      <Text variant="rentItemTextValue">{valueText}</Text>
+    <HStack my={0.25} alignItems={'center'}>
+      <Icon as={<Ionicons name={iconName} />} size={4} color={'primary'} />
+      <Text variant="rentItemTextValue" ml={1.5}>
+        {valueText}
+      </Text>
     </HStack>
   );
 };
@@ -58,14 +60,17 @@ const RentAdItem = () => {
               />
               <VStack justifyItems={'flex-end'} p={3}>
                 <Box ml={3}>
-                  <RentListText keyText={'Area'} valueText={item.area} />
-                  <RentListText keyText={'Rent'} valueText={item.rent} />
-                  <RentListText keyText={'Type'} valueText={item.type} />
                   <RentListText
-                    keyText={'Preferred'}
+                    iconName={'ios-location-sharp'}
+                    valueText={item.area}
+                  />
+                  <RentListText iconName={'ios-home'} valueText={item.type} />
+                  <RentListText iconName={'md-cash'} valueText={item.rent} />
+                  <RentListText
+                    iconName={'ios-man'}
                     valueText={item.preferred}
                   />
-                  <HStack my={2} alignItems={'center'}>
+                  <HStack mt={1.5} mb={2} alignItems={'center'}>
                     <Icon
                       as={<Ionicons name="ios-time" />}
                       size={4}
