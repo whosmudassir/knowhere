@@ -9,7 +9,7 @@ import {
   Image,
   Button,
 } from 'native-base';
-import {rentItems} from '../../data/RentItemsMockData';
+import {foodItems} from '../../data/FoodItemsMockData';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const RentListText = ({iconName, valueText}) => {
@@ -23,7 +23,7 @@ const RentListText = ({iconName, valueText}) => {
   );
 };
 
-const RentAdItem = () => {
+const FoodAdItems = () => {
   const [rentItem, setRentItem] = useState();
   const [loading, setLoading] = useState(true);
 
@@ -31,7 +31,7 @@ const RentAdItem = () => {
     const fetchData = () => {
       try {
         setLoading(true);
-        setRentItem(rentItems);
+        setRentItem(foodItems);
         setLoading(false);
       } catch (error) {
         console.error(error);
@@ -48,9 +48,9 @@ const RentAdItem = () => {
   return (
     <>
       <VStack alignItems={'center'}>
-        <Text variant={'categoryTitle'}>Places for rent</Text>
+        <Text variant={'categoryTitle'}>Popular foods & drinks</Text>
         <VStack w={'90%'}>
-          {rentItems.map(item => (
+          {foodItems.map(item => (
             <HStack key={item.id} mb={4} bg={'white'} borderRadius={10}>
               <Image
                 borderTopLeftRadius={10}
@@ -60,16 +60,17 @@ const RentAdItem = () => {
               />
               <VStack justifyItems={'flex-end'} p={3}>
                 <Box ml={3}>
+                  <RentListText iconName={'podium'} valueText={item.shopName} />
+                  <RentListText iconName={'flame'} valueText={item.item} />
                   <RentListText
                     iconName={'ios-location-sharp'}
                     valueText={item.area}
                   />
-                  <RentListText iconName={'ios-home'} valueText={item.type} />
-                  <RentListText iconName={'md-cash'} valueText={item.rent} />
                   <RentListText
-                    iconName={'ios-man'}
-                    valueText={item.preferred}
+                    iconName={'md-calendar'}
+                    valueText={item.establishedSince}
                   />
+
                   <HStack mt={1.5} mb={2} alignItems={'center'}>
                     <Icon
                       as={<Ionicons name="ios-time" />}
@@ -77,7 +78,7 @@ const RentAdItem = () => {
                       color={'muted.400'}
                     />
                     <Text color={'muted.400'} fontSize={11} ml={1}>
-                      Posted on {item.postedOn}
+                      Posted on {item.rating}
                     </Text>
                   </HStack>
                 </Box>
@@ -121,4 +122,4 @@ const RentAdItem = () => {
   );
 };
 
-export default RentAdItem;
+export default FoodAdItems;
