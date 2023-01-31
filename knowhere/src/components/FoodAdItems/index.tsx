@@ -11,6 +11,7 @@ import {
 } from 'native-base';
 import {foodItems} from '../../data/FoodItemsMockData';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import DialContactBtn from '../common/DialContactBtn';
 
 const RentListText = ({iconName, valueText}) => {
   return (
@@ -100,17 +101,7 @@ const FoodAdItems = () => {
                     }}>
                     Direction
                   </Button>
-                  <Button
-                    h={9}
-                    p={0}
-                    w={20}
-                    bgColor="primary"
-                    borderRadius={13}
-                    _text={{
-                      fontSize: 12,
-                    }}>
-                    Contact
-                  </Button>
+                  <DialContactBtn phoneNumber={item.contactNumber} />
                 </Box>
                 {/* <Text>Contact Number: {item.contactNumber}</Text> */}
               </VStack>
