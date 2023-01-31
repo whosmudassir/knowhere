@@ -9,7 +9,7 @@ export const rentItems = [
     postedOn: '10-22',
     mapCoordinate: '',
     contactName: 'Chand pasha',
-    contactNumber: 9876543210,
+    contactNumber: '9876543210',
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ export const rentItems = [
     postedOn: '8-22',
     mapCoordinate: '',
     contactName: 'Mukkal naidu',
-    contactNumber: 7895681230,
+    contactNumber: '9876543210',
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ export const rentItems = [
     postedOn: '1-23',
     mapCoordinate: '',
     contactName: 'Champa',
-    contactNumber: 8579123604,
+    contactNumber: '9876543210',
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ export const rentItems = [
     postedOn: '2-21',
     mapCoordinate: '',
     contactName: 'Shankar anna',
-    contactNumber: 9638527410,
+    contactNumber: '9876543210',
   },
   {
     id: 5,
@@ -57,11 +57,11 @@ export const rentItems = [
     postedOn: '2-21',
     mapCoordinate: '',
     contactName: 'Shankar anna',
-    contactNumber: 9638527410,
+    contactNumber: '9876543210',
   },
   {
     id: 6,
-    img: 'https://images.pexels.com/photos/323776/pexels-photo-323776.jpeg?auto=compress&cs=tinysrgb&w=1600',
+    img: 'https://images.freeimages.com/images/large-previews/bb0/cat-in-window-1218032.jpg',
     area: 'prakash nagar',
     rent: 20000,
     type: '3 bhk',
@@ -69,6 +69,6 @@ export const rentItems = [
     postedOn: '2-21',
     mapCoordinate: '',
     contactName: 'Shankar anna',
-    contactNumber: 9638527410,
+    contactNumber: '8919416639',
   },
 ];

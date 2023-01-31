@@ -12,6 +12,7 @@ import {
 import {rentItems} from '../../data/RentItemsMockData';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import AdItemHorizontalText from '../common/AdItemHorizontalText';
+import DialContactBtn from '../common/DialContactBtn';
 
 const RentAdItems = () => {
   const [rentItem, setRentItem] = useState();
@@ -46,6 +47,7 @@ const RentAdItems = () => {
                 borderTopLeftRadius={10}
                 borderBottomLeftRadius={10}
                 source={{uri: item.img}}
+                alt="img"
                 style={{width: '42%', height: '100%'}}
               />
               <VStack justifyItems={'flex-end'} p={3}>
@@ -95,17 +97,7 @@ const RentAdItems = () => {
                     }}>
                     Direction
                   </Button>
-                  <Button
-                    h={9}
-                    p={0}
-                    w={20}
-                    bgColor="primary"
-                    borderRadius={13}
-                    _text={{
-                      fontSize: 12,
-                    }}>
-                    Contact
-                  </Button>
+                  <DialContactBtn phoneNumber={item.contactNumber} />
                 </Box>
                 {/* <Text>Contact Number: {item.contactNumber}</Text> */}
               </VStack>

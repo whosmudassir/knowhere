@@ -9,7 +9,7 @@ export const foodItems = [
     rating: 4,
     mapCoordinate: '',
     contactName: 'Chand pasha',
-    contactNumber: 9876543210,
+    contactNumber: '9876543210',
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ export const foodItems = [
     rating: 5,
     mapCoordinate: '',
     contactName: 'Mukkal naidu',
-    contactNumber: 7895681230,
+    contactNumber: '9876543210',
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ export const foodItems = [
     rating: 3,
     mapCoordinate: '',
     contactName: 'Shafi',
-    contactNumber: 8579123604,
+    contactNumber: '9876543210',
   },
   {
     id: 4,
@@ -45,6 +45,6 @@ export const foodItems = [
     rating: 5,
     mapCoordinate: '',
     contactName: 'Shankar anna',
-    contactNumber: 9638527410,
+    contactNumber: '9876543210',
   },
 ];
