@@ -14,7 +14,7 @@ const SetDirectionsBtn: React.FC<SetDirectionsBtnProps> = ({coordinates}) => {
 
   return (
     <Button
-      ml={2}
+      ml={3}
       mr={2.5}
       bgColor="white"
       borderRadius={13}
