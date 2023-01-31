@@ -12,6 +12,7 @@ import {
 import {foodItems} from '../../data/FoodItemsMockData';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import DialContactBtn from '../common/DialContactBtn';
+import SetDirectionsBtn from '../common/SetDirectionsBtn';
 
 const RentListText = ({iconName, valueText}) => {
   return (
@@ -85,22 +86,7 @@ const FoodAdItems = () => {
                 </Box>
                 {/* <Text>Contact Name: {item.contactName}</Text> */}
                 <Box flexDirection={'row'}>
-                  <Button
-                    ml={2}
-                    mr={2.5}
-                    bgColor="white"
-                    borderRadius={13}
-                    borderColor={'primary'}
-                    borderWidth={'1px'}
-                    h={9}
-                    p={0}
-                    w={20}
-                    _text={{
-                      color: 'primary',
-                      fontSize: 12,
-                    }}>
-                    Direction
-                  </Button>
+                  <SetDirectionsBtn coordinates={item.mapCoordinate} />
                   <DialContactBtn phoneNumber={item.contactNumber} />
                 </Box>
                 {/* <Text>Contact Number: {item.contactNumber}</Text> */}
