@@ -13,6 +13,7 @@ import {rentItems} from '../../data/RentItemsMockData';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import AdItemHorizontalText from '../common/AdItemHorizontalText';
 import DialContactBtn from '../common/DialContactBtn';
+import SetDirectionsBtn from '../common/SetDirectionsBtn';
 
 const RentAdItems = () => {
   const [rentItem, setRentItem] = useState();
@@ -81,22 +82,7 @@ const RentAdItems = () => {
                 </Box>
                 {/* <Text>Contact Name: {item.contactName}</Text> */}
                 <Box flexDirection={'row'}>
-                  <Button
-                    ml={2}
-                    mr={2.5}
-                    bgColor="white"
-                    borderRadius={13}
-                    borderColor={'primary'}
-                    borderWidth={'1px'}
-                    h={9}
-                    p={0}
-                    w={20}
-                    _text={{
-                      color: 'primary',
-                      fontSize: 12,
-                    }}>
-                    Direction
-                  </Button>
+                  <SetDirectionsBtn coordinates={item.mapCoordinate} />
                   <DialContactBtn phoneNumber={item.contactNumber} />
                 </Box>
                 {/* <Text>Contact Number: {item.contactNumber}</Text> */}
