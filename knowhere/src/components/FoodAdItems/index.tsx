@@ -13,17 +13,8 @@ import {foodItems} from '../../data/FoodItemsMockData';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import DialContactBtn from '../common/DialContactBtn';
 import SetDirectionsBtn from '../common/SetDirectionsBtn';
-
-const RentListText = ({iconName, valueText}) => {
-  return (
-    <HStack my={0.25} alignItems={'center'}>
-      <Icon as={<Ionicons name={iconName} />} size={4} color={'primary'} />
-      <Text variant="rentItemTextValue" ml={1.5}>
-        {valueText}
-      </Text>
-    </HStack>
-  );
-};
+import FavoriteIconBtn from '../common/FavoriteIconBtn';
+import AdItemHorizontalText from '../common/AdItemHorizontalText';
 
 const FoodAdItems = () => {
   const [rentItem, setRentItem] = useState();
@@ -62,15 +53,22 @@ const FoodAdItems = () => {
               />
               <VStack justifyItems={'flex-end'} p={3}>
                 <Box ml={3}>
-                  <RentListText iconName={'podium'} valueText={item.shopName} />
-                  <RentListText iconName={'flame'} valueText={item.item} />
-                  <RentListText
-                    iconName={'ios-location-sharp'}
-                    valueText={item.area}
+                  <AdItemHorizontalText
+                    iconName={'podium'}
+                    textValue={item.shopName}
                   />
-                  <RentListText
+                  <AdItemHorizontalText
+                    iconName={'flame'}
+                    textValue={item.item}
+                  />
+                  <AdItemHorizontalText
+                    iconName={'ios-location-sharp'}
+                    textValue={item.area}
+                  />
+
+                  <AdItemHorizontalText
                     iconName={'md-calendar'}
-                    valueText={item.establishedSince}
+                    textValue={item.establishedSince}
                   />
 
                   <HStack mt={1.5} mb={2} alignItems={'center'}>
@@ -91,6 +89,7 @@ const FoodAdItems = () => {
                 </Box>
                 {/* <Text>Contact Number: {item.contactNumber}</Text> */}
               </VStack>
+              <FavoriteIconBtn />
             </HStack>
           ))}
         </VStack>

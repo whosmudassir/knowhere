@@ -4,7 +4,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 interface AdItemHorizontalTextProps {
   iconName: string;
-  textValue: string;
+  textValue: string | number;
 }
 
 const AdItemHorizontalText: React.FC<AdItemHorizontalTextProps> = ({
