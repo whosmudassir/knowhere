@@ -6,7 +6,7 @@ import FoodAdItems from '../../components/FoodAdItems';
 const Food = () => {
   return (
     <>
-      <MainHeader />
+      <MainHeader showLocationBox={true} />
       <ScrollView flex={1} bgColor={'secondary'}>
         <VStack>
           <FoodAdItems />
