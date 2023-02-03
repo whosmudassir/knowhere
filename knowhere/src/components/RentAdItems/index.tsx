@@ -14,6 +14,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import AdItemHorizontalText from '../common/AdItemHorizontalText';
 import DialContactBtn from '../common/DialContactBtn';
 import SetDirectionsBtn from '../common/SetDirectionsBtn';
+import FavoriteIconBtn from '../common/FavoriteIconBtn';
 
 const RentAdItems = () => {
   const [rentItem, setRentItem] = useState();
@@ -87,6 +88,7 @@ const RentAdItems = () => {
                 </Box>
                 {/* <Text>Contact Number: {item.contactNumber}</Text> */}
               </VStack>
+              <FavoriteIconBtn />
             </HStack>
           ))}
         </VStack>
