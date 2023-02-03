@@ -2,7 +2,11 @@ import React from 'react';
 import {Text, Box, Image} from 'native-base';
 import LocationBox from '../LocationBox';
 
-const MainHeader = () => {
+interface MainHeaderProps {
+  showLocationBox: boolean;
+}
+
+const MainHeader: React.FC<MainHeaderProps> = ({showLocationBox}) => {
   return (
     <Box bgColor={'white'}>
       <Box alignItems={'center'} mt={-8}>
@@ -14,7 +18,7 @@ const MainHeader = () => {
           size={'xl'}
         />
       </Box>
-      <LocationBox />
+      {showLocationBox && <LocationBox />}
     </Box>
   );
 };

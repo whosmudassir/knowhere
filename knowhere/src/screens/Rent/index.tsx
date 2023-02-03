@@ -6,7 +6,7 @@ import RentAdItems from '../../components/RentAdItems';
 const Rent = () => {
   return (
     <>
-      <MainHeader />
+      <MainHeader showLocationBox={true} />
       <ScrollView flex={1} bgColor={'secondary'}>
         <VStack>
           <RentAdItems />
