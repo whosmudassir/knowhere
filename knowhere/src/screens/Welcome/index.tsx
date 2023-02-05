@@ -1,14 +1,15 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Text, Box, VStack, Image, Button, Link, ScrollView} from 'native-base';
 import {NavigationProp, ParamListBase} from '@react-navigation/native';
-import Login from '../Login';
-
+import {triggerSignUpActionSheet} from '../../store';
 interface WelcomeProps {
   navigation: NavigationProp<ParamListBase>;
 }
 
 const Welcome: React.FC<WelcomeProps> = ({navigation}) => {
-  const [isLoginOpen, setIsLoginOpen] = useState(false);
+  const openSignUpActionSheet = triggerSignUpActionSheet(
+    state => state.openSignUpActionSheet,
+  );
 
   return (
     <>
@@ -73,7 +74,7 @@ const Welcome: React.FC<WelcomeProps> = ({navigation}) => {
           <Button
             variant={'thickPrimaryBtn'}
             mt={6}
-            onPress={() => setIsLoginOpen(!isLoginOpen)}>
+            onPress={() => openSignUpActionSheet()}>
             Sign up
           </Button>
           <Button
@@ -84,10 +85,6 @@ const Welcome: React.FC<WelcomeProps> = ({navigation}) => {
           </Button>
         </VStack>
       </ScrollView>
-      <Login
-        isLoginOpen={isLoginOpen}
-        onLoginClose={() => setIsLoginOpen(!isLoginOpen)}
-      />
     </>
   );
 };

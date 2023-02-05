@@ -5,9 +5,20 @@ import Home from './src/screens/Home';
 import {theme} from './src/theme';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import Login from './src/screens/Login';
+import {triggerSignUpActionSheet} from './src/store';
 
 const Stack = createNativeStackNavigator();
+
 export default function App() {
+  const isSignUpActionSheetOpen = triggerSignUpActionSheet(
+    state => state.isSignUpActionSheetOpen,
+  );
+
+  const closeSignUpActionSheet = triggerSignUpActionSheet(
+    state => state.closeSignUpActionSheet,
+  );
+
   return (
     <NavigationContainer>
       <NativeBaseProvider theme={theme}>
@@ -24,6 +35,10 @@ export default function App() {
             options={{headerShown: false}}
           />
         </Stack.Navigator>
+        <Login
+          isLoginOpen={isSignUpActionSheetOpen}
+          onLoginClose={() => closeSignUpActionSheet()}
+        />
       </NativeBaseProvider>
     </NavigationContainer>
   );
