@@ -11,7 +11,7 @@ const Tab = createMaterialTopTabNavigator();
 const Favorites = () => {
   return (
     <>
-      <MainHeader showLocationBox={false} />
+      <MainHeader showLocationBox={true} />
       <NonLoggedInUserView />
       <Box mt={-51} alignItems={'center'}></Box>
       {/* {false ? (
