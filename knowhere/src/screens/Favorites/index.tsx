@@ -9,19 +9,20 @@ import NonLoggedInUserView from '../NonLoggedInUserView';
 const Tab = createMaterialTopTabNavigator();
 
 const Favorites = () => {
+  const userLoggedin = true;
+
   return (
     <>
-      <MainHeader showLocationBox={true} />
-      <NonLoggedInUserView />
+      <MainHeader showLocationBox={userLoggedin ? false : true} />
       <Box mt={-51} alignItems={'center'}></Box>
-      {/* {false ? (
+      {userLoggedin ? (
         <Tab.Navigator>
           <Tab.Screen name="Rent" component={FavoriteRentItems} />
           <Tab.Screen name="Food" component={FavoriteFoodItems} />
         </Tab.Navigator>
       ) : (
         <NonLoggedInUserView />
-      )} */}
+      )}
     </>
   );
 };
