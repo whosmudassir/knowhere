@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Button, Icon} from 'native-base';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {userRentFavoriteStore} from '../../../store';
+import {userRentFavoriteStore, userFoodFavoriteStore} from '../../../store';
 
 interface FavoriteIconBtnProps {
   addTo: string;
@@ -18,13 +18,20 @@ const FavoriteIconBtn: React.FC<FavoriteIconBtnProps> = ({addTo, id}) => {
     state => state.removeFromRentFavorite,
   );
 
+  const addToFoodFavorite = userFoodFavoriteStore(
+    state => state.addToFoodFavorite,
+  );
+  const removeFromFoodFavorite = userFoodFavoriteStore(
+    state => state.removeFromFoodFavorite,
+  );
+
   const onIconClick = () => {
     if (iconState == 'ios-heart-outline') {
       setIconState('ios-heart');
-      addTo == 'Rent' ? addToRentFavorite(id) : null;
+      addTo == 'Rent' ? addToRentFavorite(id) : addToRentFavorite(id);
     } else {
       setIconState('ios-heart-outline');
-      addTo == 'Rent' ? removeFromRentFavorite(id) : null;
+      addTo == 'Rent' ? removeFromRentFavorite(id) : removeFromRentFavorite(id);
     }
   };
 

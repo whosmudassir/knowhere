@@ -89,7 +89,7 @@ const FoodAdItems = () => {
                 </Box>
                 {/* <Text>Contact Number: {item.contactNumber}</Text> */}
               </VStack>
-              <FavoriteIconBtn />
+              <FavoriteIconBtn id={item.id} addTo={'Food'} />
             </HStack>
           ))}
         </VStack>

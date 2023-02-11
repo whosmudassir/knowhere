@@ -81,14 +81,14 @@ const RentAdItems = () => {
                     </Text>
                   </HStack>
                 </Box>
-                {/* <Text>Contact Name: {item.contactName}</Text> */}
+
                 <Box flexDirection={'row'}>
                   <SetDirectionsBtn coordinates={item.mapCoordinate} />
                   <DialContactBtn phoneNumber={item.contactNumber} />
                 </Box>
-                {/* <Text>Contact Number: {item.contactNumber}</Text> */}
               </VStack>
-              <FavoriteIconBtn />
+
+              <FavoriteIconBtn addTo={'Rent'} id={item.id} />
             </HStack>
           ))}
         </VStack>
