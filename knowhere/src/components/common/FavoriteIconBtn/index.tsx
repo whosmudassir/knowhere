@@ -1,15 +1,30 @@
 import React, {useState} from 'react';
 import {Button, Icon} from 'native-base';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import {userRentFavoriteStore} from '../../../store';
 
-const FavoriteIconBtn = () => {
+interface FavoriteIconBtnProps {
+  addTo: string;
+  id: number;
+}
+
+const FavoriteIconBtn: React.FC<FavoriteIconBtnProps> = ({addTo, id}) => {
   const [iconState, setIconState] = useState('ios-heart-outline');
 
+  const addToRentFavorite = userRentFavoriteStore(
+    state => state.addToRentFavorite,
+  );
+  const removeFromRentFavorite = userRentFavoriteStore(
+    state => state.removeFromRentFavorite,
+  );
+
   const onIconClick = () => {
-    if (iconState == 'ios-heart') {
-      setIconState('ios-heart-outline');
-    } else {
+    if (iconState == 'ios-heart-outline') {
       setIconState('ios-heart');
+      addTo == 'Rent' ? addToRentFavorite(id) : null;
+    } else {
+      setIconState('ios-heart-outline');
+      addTo == 'Rent' ? removeFromRentFavorite(id) : null;
     }
   };
 
