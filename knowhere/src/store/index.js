@@ -20,3 +20,18 @@ export const userRentFavoriteStore = create(set => ({
     }));
   },
 }));
+
+//BE store rent fav data
+export const userFoodFavoriteStore = create(set => ({
+  userFoodFavorites: [],
+  addToFoodFavorite: itemId => {
+    set(state => ({
+      userFoodFavorites: [...state.userFoodFavorites, itemId],
+    }));
+  },
+  removeFromFoodFavorite: itemId => {
+    set(state => ({
+      userFoodFavorites: state.userFoodFavorites.filter(id => id !== itemId),
+    }));
+  },
+}));
