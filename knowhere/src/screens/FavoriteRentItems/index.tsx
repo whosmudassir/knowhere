@@ -9,18 +9,14 @@ const FavoriteRentItems = () => {
     state => state.userRentFavorites,
   );
 
-  const filteredRentItems = rentItems.filter(item => {
-    return userRentFavorites.includes(item.id);
-  });
-
   return (
     <ScrollView flex={1} bgColor={'secondary'}>
       <VStack alignItems={'center'}>
         <Text variant={'categoryTitle'}></Text>
         <VStack w={'90%'}>
-          {filteredRentItems.map(item => (
+          {userRentFavorites.map(item => (
             <View key={item.id}>
-              <RentAdItem item={item} isInFavorite={true} />
+              <RentAdItem item={item} />
             </View>
           ))}
         </VStack>

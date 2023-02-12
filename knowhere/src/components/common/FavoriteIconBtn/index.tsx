@@ -5,18 +5,11 @@ import {userRentFavoriteStore, userFoodFavoriteStore} from '../../../store';
 
 interface FavoriteIconBtnProps {
   addTo: string;
-  id: number;
-  isInFavorite?: boolean;
+  item: any;
 }
 
-const FavoriteIconBtn: React.FC<FavoriteIconBtnProps> = ({
-  addTo,
-  id,
-  isInFavorite,
-}) => {
-  const [iconState, setIconState] = useState(
-    isInFavorite ? 'ios-heart' : 'ios-heart-outline',
-  );
+const FavoriteIconBtn: React.FC<FavoriteIconBtnProps> = ({addTo, item}) => {
+  const [iconState, setIconState] = useState('ios-heart-outline');
 
   const addToRentFavorite = userRentFavoriteStore(
     state => state.addToRentFavorite,
@@ -35,10 +28,12 @@ const FavoriteIconBtn: React.FC<FavoriteIconBtnProps> = ({
   const onIconClick = () => {
     if (iconState == 'ios-heart-outline') {
       setIconState('ios-heart');
-      addTo == 'Rent' ? addToRentFavorite(id) : addToFoodFavorite(id);
+      addTo == 'Rent' ? addToRentFavorite(item) : addToFoodFavorite(item);
     } else {
       setIconState('ios-heart-outline');
-      addTo == 'Rent' ? removeFromRentFavorite(id) : removeFromFoodFavorite(id);
+      addTo == 'Rent'
+        ? removeFromRentFavorite(item)
+        : removeFromFoodFavorite(item);
     }
   };
 
