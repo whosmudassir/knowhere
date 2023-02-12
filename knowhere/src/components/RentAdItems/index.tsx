@@ -32,7 +32,7 @@ const RentAdItems = () => {
         <VStack w={'90%'}>
           {rentItems.map(item => (
             <View key={item.id}>
-              <RentAdItem item={item} />
+              <RentAdItem item={item} isInFavorite={true} />
             </View>
           ))}
         </VStack>

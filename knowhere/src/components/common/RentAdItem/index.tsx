@@ -15,11 +15,12 @@ import DialContactBtn from '../DialContactBtn';
 import SetDirectionsBtn from '../SetDirectionsBtn';
 import FavoriteIconBtn from '../FavoriteIconBtn';
 
-interface FoodAdItemProps {
+interface RentAdItemProps {
   item: any;
+  isInFavorite?: boolean;
 }
 
-const FoodAdItem: React.FC<FoodAdItemProps> = ({item}) => {
+const RentAdItem: React.FC<RentAdItemProps> = ({item, isInFavorite}) => {
   return (
     <>
       <HStack mb={4} bg={'white'} borderRadius={10}>
@@ -27,25 +28,21 @@ const FoodAdItem: React.FC<FoodAdItemProps> = ({item}) => {
           borderTopLeftRadius={10}
           borderBottomLeftRadius={10}
           source={{uri: item.img}}
+          alt="img"
           style={{width: '42%', height: '100%'}}
         />
         <VStack justifyItems={'flex-end'} p={3}>
           <Box ml={3}>
             <AdItemHorizontalText
-              iconName={'podium'}
-              textValue={item.shopName}
-            />
-            <AdItemHorizontalText iconName={'flame'} textValue={item.item} />
-            <AdItemHorizontalText
               iconName={'ios-location-sharp'}
               textValue={item.area}
             />
-
+            <AdItemHorizontalText iconName={'ios-home'} textValue={item.type} />
+            <AdItemHorizontalText iconName={'md-cash'} textValue={item.rent} />
             <AdItemHorizontalText
-              iconName={'md-calendar'}
-              textValue={item.establishedSince}
+              iconName={'ios-man'}
+              textValue={item.preferred}
             />
-
             <HStack mt={1.5} mb={2} alignItems={'center'}>
               <Icon
                 as={<Ionicons name="ios-time" />}
@@ -53,21 +50,25 @@ const FoodAdItem: React.FC<FoodAdItemProps> = ({item}) => {
                 color={'muted.400'}
               />
               <Text color={'muted.400'} fontSize={11} ml={1}>
-                Posted on {item.rating}
+                Posted on {item.postedOn}
               </Text>
             </HStack>
           </Box>
-          {/* <Text>Contact Name: {item.contactName}</Text> */}
+
           <Box flexDirection={'row'}>
             <SetDirectionsBtn coordinates={item.mapCoordinate} />
             <DialContactBtn phoneNumber={item.contactNumber} />
           </Box>
-          {/* <Text>Contact Number: {item.contactNumber}</Text> */}
         </VStack>
-        <FavoriteIconBtn id={item.id} addTo={'Food'} />
+
+        <FavoriteIconBtn
+          addTo={'Rent'}
+          id={item.id}
+          isInFavorite={isInFavorite}
+        />
       </HStack>
     </>
   );
 };
 
-export default FoodAdItem;
+export default RentAdItem;
