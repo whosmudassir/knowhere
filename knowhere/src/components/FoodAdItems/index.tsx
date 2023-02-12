@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Text, VStack, View} from 'native-base';
 import {foodItems} from '../../data/FoodItemsMockData';
-import FoodAdItem from '../common/RentAdItem';
+import FoodAdItem from '../common/FoodAdItem';
 
 const FoodAdItems = () => {
   const [rentItem, setRentItem] = useState();
@@ -32,7 +32,7 @@ const FoodAdItems = () => {
         <VStack w={'90%'}>
           {foodItems.map(item => (
             <View key={item.id}>
-              <FoodAdItem item={item} />
+              <FoodAdItem item={item} isInFavorite={true} />
             </View>
           ))}
         </VStack>

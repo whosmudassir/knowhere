@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Button, Icon} from 'native-base';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {userRentFavoriteStore, userFoodFavoriteStore} from '../../../store';
@@ -6,10 +6,17 @@ import {userRentFavoriteStore, userFoodFavoriteStore} from '../../../store';
 interface FavoriteIconBtnProps {
   addTo: string;
   id: number;
+  isInFavorite?: boolean;
 }
 
-const FavoriteIconBtn: React.FC<FavoriteIconBtnProps> = ({addTo, id}) => {
-  const [iconState, setIconState] = useState('ios-heart-outline');
+const FavoriteIconBtn: React.FC<FavoriteIconBtnProps> = ({
+  addTo,
+  id,
+  isInFavorite,
+}) => {
+  const [iconState, setIconState] = useState(
+    isInFavorite ? 'ios-heart' : 'ios-heart-outline',
+  );
 
   const addToRentFavorite = userRentFavoriteStore(
     state => state.addToRentFavorite,
@@ -28,10 +35,10 @@ const FavoriteIconBtn: React.FC<FavoriteIconBtnProps> = ({addTo, id}) => {
   const onIconClick = () => {
     if (iconState == 'ios-heart-outline') {
       setIconState('ios-heart');
-      addTo == 'Rent' ? addToRentFavorite(id) : addToRentFavorite(id);
+      addTo == 'Rent' ? addToRentFavorite(id) : addToFoodFavorite(id);
     } else {
       setIconState('ios-heart-outline');
-      addTo == 'Rent' ? removeFromRentFavorite(id) : removeFromRentFavorite(id);
+      addTo == 'Rent' ? removeFromRentFavorite(id) : removeFromFoodFavorite(id);
     }
   };
 

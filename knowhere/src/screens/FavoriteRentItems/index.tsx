@@ -16,11 +16,11 @@ const FavoriteRentItems = () => {
   return (
     <>
       <VStack alignItems={'center'}>
-        <Text variant={'categoryTitle'}>Places for rent</Text>
+        <Text variant={'categoryTitle'}></Text>
         <VStack w={'90%'}>
           {filteredRentItems.map(item => (
             <View key={item.id}>
-              <RentAdItem item={item} />
+              <RentAdItem item={item} isInFavorite={true} />
             </View>
           ))}
         </VStack>
