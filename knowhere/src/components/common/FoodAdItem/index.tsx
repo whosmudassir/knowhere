@@ -17,10 +17,9 @@ import FavoriteIconBtn from '../FavoriteIconBtn';
 
 interface FoodAdItemProps {
   item: any;
-  isInFavorite?: boolean;
 }
 
-const FoodAdItem: React.FC<FoodAdItemProps> = ({item, isInFavorite}) => {
+const FoodAdItem: React.FC<FoodAdItemProps> = ({item}) => {
   return (
     <>
       <HStack mb={4} bg={'white'} borderRadius={10}>
@@ -65,11 +64,7 @@ const FoodAdItem: React.FC<FoodAdItemProps> = ({item, isInFavorite}) => {
           </Box>
           {/* <Text>Contact Number: {item.contactNumber}</Text> */}
         </VStack>
-        <FavoriteIconBtn
-          id={item.id}
-          addTo={'Food'}
-          isInFavorite={isInFavorite}
-        />
+        <FavoriteIconBtn item={item} addTo={'Food'} />
       </HStack>
     </>
   );

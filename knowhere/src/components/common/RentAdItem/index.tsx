@@ -17,10 +17,9 @@ import FavoriteIconBtn from '../FavoriteIconBtn';
 
 interface RentAdItemProps {
   item: any;
-  isInFavorite?: boolean;
 }
 
-const RentAdItem: React.FC<RentAdItemProps> = ({item, isInFavorite}) => {
+const RentAdItem: React.FC<RentAdItemProps> = ({item}) => {
   return (
     <>
       <HStack mb={4} bg={'white'} borderRadius={10}>
@@ -61,11 +60,7 @@ const RentAdItem: React.FC<RentAdItemProps> = ({item, isInFavorite}) => {
           </Box>
         </VStack>
 
-        <FavoriteIconBtn
-          addTo={'Rent'}
-          id={item.id}
-          isInFavorite={isInFavorite}
-        />
+        <FavoriteIconBtn addTo={'Rent'} item={item} />
       </HStack>
     </>
   );
