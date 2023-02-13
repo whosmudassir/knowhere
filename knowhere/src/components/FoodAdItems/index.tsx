@@ -32,7 +32,7 @@ const FoodAdItems = () => {
         <VStack w={'90%'}>
           {foodItems.map(item => (
             <View key={item.id}>
-              <FoodAdItem item={item} isInFavorite={true} />
+              <FoodAdItem item={item} />
             </View>
           ))}
         </VStack>
