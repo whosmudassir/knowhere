@@ -10,17 +10,13 @@ const FavoriteFoodItems = () => {
     state => state.userFoodFavorites,
   );
 
-  const filteredFoodItems = foodItems.filter(item => {
-    return userFoodFavorites.includes(item.id);
-  });
-
   return (
     <ScrollView flex={1} bgColor={'secondary'}>
       <VStack alignItems={'center'}>
         <Text variant={'categoryTitle'}></Text>
         <VStack w={'90%'}>
-          {filteredFoodItems.length > 0 ? (
-            filteredFoodItems.map(item => (
+          {userFoodFavorites.length > 0 ? (
+            userFoodFavorites.map(item => (
               <View key={item.id}>
                 <FoodAdItem item={item} />
               </View>
