@@ -29,7 +29,7 @@ const FoodAdItems = () => {
     <>
       <VStack alignItems={'center'}>
         <Text variant={'categoryTitle'}>Popular foods & drinks</Text>
-        <VStack w={'90%'}>
+        <VStack w={'94%'}>
           {foodItems.map(item => (
             <View key={item.id}>
               <FoodAdItem item={item} />
