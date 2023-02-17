@@ -29,7 +29,7 @@ const RentAdItems = () => {
     <>
       <VStack alignItems={'center'}>
         <Text variant={'categoryTitle'}>Places for rent</Text>
-        <VStack w={'90%'}>
+        <VStack w={'94%'}>
           {rentItems.map(item => (
             <View key={item.id}>
               <RentAdItem item={item} isInFavorite={true} />
